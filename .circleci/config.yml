@@ -158,9 +158,9 @@ workflows:
                 - develop
                 - develop-2.x
                 - master
-      - build-play-apk:
-          requires:
-            - build-kotlin-sdk
+#      - build-play-apk:
+#          requires:
+#            - build-kotlin-sdk
       - build-foss-apk:
           requires:
             - build-kotlin-sdk
