@@ -1,10 +1,10 @@
 package chat.rocket.android.util.extension
 
 import chat.rocket.android.core.lifecycle.CancelStrategy
-import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Job
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.launch
 
 /**
  * Launches a coroutine on the UI context.

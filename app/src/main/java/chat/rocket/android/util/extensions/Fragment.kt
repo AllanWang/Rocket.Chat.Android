@@ -3,9 +3,9 @@ package chat.rocket.android.util.extensions
 import android.os.Looper
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import kotlinx.coroutines.experimental.Job
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.launch
 
 inline fun Fragment.ui(crossinline block: (activity: FragmentActivity) -> Unit): Job? {
     // Checking first for activity and view saves us from some synchronyzed and thread local checks

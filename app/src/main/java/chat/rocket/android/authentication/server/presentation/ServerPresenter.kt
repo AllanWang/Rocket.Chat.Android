@@ -12,8 +12,8 @@ import chat.rocket.android.server.infraestructure.RocketChatClientFactory
 import chat.rocket.android.server.presentation.CheckServerPresenter
 import chat.rocket.android.util.extension.launchUI
 import chat.rocket.android.util.extensions.isValidUrl
-import kotlinx.coroutines.experimental.DefaultDispatcher
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.DefaultDispatcher
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ServerPresenter @Inject constructor(

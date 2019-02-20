@@ -6,8 +6,8 @@ import android.os.Environment
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import kotlinx.coroutines.experimental.DefaultDispatcher
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.DefaultDispatcher
+import kotlinx.coroutines.withContext
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.InputStream

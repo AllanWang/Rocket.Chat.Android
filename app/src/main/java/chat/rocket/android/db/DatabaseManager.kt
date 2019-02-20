@@ -33,11 +33,11 @@ import chat.rocket.core.model.Myself
 import chat.rocket.core.model.Room
 import chat.rocket.core.model.attachment.Attachment
 import chat.rocket.core.model.userId
-import kotlinx.coroutines.experimental.Job
-import kotlinx.coroutines.experimental.channels.Channel
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.newSingleThreadContext
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.util.HashSet
 import kotlin.system.measureTimeMillis

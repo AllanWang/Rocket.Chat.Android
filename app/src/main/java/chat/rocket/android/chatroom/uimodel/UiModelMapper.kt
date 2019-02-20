@@ -44,8 +44,8 @@ import chat.rocket.core.model.attachment.Attachment
 import chat.rocket.core.model.attachment.Field
 import chat.rocket.core.model.isSystemMessage
 import chat.rocket.core.model.url.Url
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl
 import java.security.InvalidParameterException
 import java.util.*

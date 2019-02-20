@@ -31,7 +31,7 @@ import chat.rocket.core.internal.rest.loginWithCas
 import chat.rocket.core.internal.rest.loginWithOauth
 import chat.rocket.core.internal.rest.loginWithSaml
 import chat.rocket.core.internal.rest.me
-import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 

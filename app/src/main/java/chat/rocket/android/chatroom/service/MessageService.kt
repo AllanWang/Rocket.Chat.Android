@@ -10,8 +10,8 @@ import chat.rocket.android.server.infraestructure.DatabaseMessagesRepository
 import chat.rocket.core.internal.rest.sendMessage
 import chat.rocket.core.model.Message
 import dagger.android.AndroidInjection
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 

@@ -22,7 +22,7 @@ import chat.rocket.common.model.roomTypeOf
 import chat.rocket.core.internal.realtime.createDirectMessage
 import chat.rocket.core.internal.rest.me
 import chat.rocket.core.internal.rest.show
-import kotlinx.coroutines.experimental.withTimeout
+import kotlinx.coroutines.withTimeout
 import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Named

@@ -7,7 +7,7 @@ import chat.rocket.android.server.domain.GetCurrentServerInteractor
 import chat.rocket.android.server.domain.GetSettingsInteractor
 import chat.rocket.android.server.domain.SITE_URL
 import com.crashlytics.android.Crashlytics
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.runBlocking
 
 fun installCrashlyticsWrapper(context: Application,
                               currentServerInteractor: GetCurrentServerInteractor,

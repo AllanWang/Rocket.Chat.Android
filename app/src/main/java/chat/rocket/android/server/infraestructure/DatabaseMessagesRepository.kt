@@ -6,8 +6,8 @@ import chat.rocket.android.db.model.MessagesSync
 import chat.rocket.android.server.domain.MessagesRepository
 import chat.rocket.android.util.retryDB
 import chat.rocket.core.model.Message
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.withContext
 
 class DatabaseMessagesRepository(
     private val dbManager: DatabaseManager,

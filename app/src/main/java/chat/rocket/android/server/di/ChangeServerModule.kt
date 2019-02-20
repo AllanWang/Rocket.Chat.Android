@@ -9,7 +9,7 @@ import chat.rocket.android.server.presentation.ChangeServerView
 import chat.rocket.android.server.ui.ChangeServerActivity
 import dagger.Module
 import dagger.Provides
-import kotlinx.coroutines.experimental.Job
+import kotlinx.coroutines.Job
 
 @Module
 class ChangeServerModule {

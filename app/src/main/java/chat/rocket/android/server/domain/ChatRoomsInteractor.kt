@@ -1,8 +1,8 @@
 package chat.rocket.android.server.domain
 
 import chat.rocket.core.model.ChatRoom
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ChatRoomsInteractor @Inject constructor(private val repository: ChatRoomsRepository) {

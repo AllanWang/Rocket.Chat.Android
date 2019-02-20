@@ -11,8 +11,8 @@ import chat.rocket.android.server.infraestructure.ConnectionManagerFactory
 import chat.rocket.common.RocketChatException
 import chat.rocket.core.internal.rest.sendMessage
 import dagger.android.AndroidInjection
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.*
 import javax.inject.Inject

@@ -37,7 +37,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.HasBroadcastReceiverInjector
 import dagger.android.HasServiceInjector
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.lang.ref.WeakReference
 import javax.inject.Inject

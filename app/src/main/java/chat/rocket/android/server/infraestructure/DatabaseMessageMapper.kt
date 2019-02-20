@@ -22,8 +22,8 @@ import chat.rocket.core.model.messageTypeOf
 import chat.rocket.core.model.url.Meta
 import chat.rocket.core.model.url.ParsedUrl
 import chat.rocket.core.model.url.Url
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.withContext
 
 class DatabaseMessageMapper(private val dbManager: DatabaseManager) {
     suspend fun map(message: FullMessage): Message? = map(listOf(message)).firstOrNull()

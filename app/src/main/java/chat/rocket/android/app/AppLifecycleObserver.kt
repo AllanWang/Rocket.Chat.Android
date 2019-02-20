@@ -10,7 +10,7 @@ import chat.rocket.android.server.infraestructure.RocketChatClientFactory
 import chat.rocket.common.RocketChatException
 import chat.rocket.common.model.UserStatus
 import chat.rocket.core.internal.realtime.setTemporaryStatus
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 

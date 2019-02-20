@@ -3,8 +3,8 @@ package chat.rocket.android.server.domain
 import chat.rocket.android.server.infraestructure.RocketChatClientFactory
 import chat.rocket.android.util.retryIO
 import chat.rocket.core.internal.rest.permissions
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 

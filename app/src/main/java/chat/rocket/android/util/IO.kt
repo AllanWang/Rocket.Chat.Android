@@ -2,10 +2,10 @@ package chat.rocket.android.util
 
 import android.database.sqlite.SQLiteDatabaseLockedException
 import chat.rocket.common.RocketChatNetworkErrorException
-import kotlinx.coroutines.experimental.TimeoutCancellationException
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.isActive
-import kotlinx.coroutines.experimental.yield
+import kotlinx.coroutines.TimeoutCancellationException
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.yield
 import timber.log.Timber
 import kotlin.coroutines.experimental.coroutineContext
 

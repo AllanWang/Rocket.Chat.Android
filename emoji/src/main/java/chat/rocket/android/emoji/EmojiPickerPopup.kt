@@ -14,8 +14,8 @@ import chat.rocket.android.emoji.internal.EmojiCategory
 import chat.rocket.android.emoji.internal.EmojiPagerAdapter
 import chat.rocket.android.emoji.internal.PREF_EMOJI_SKIN_TONE
 import kotlinx.android.synthetic.main.emoji_picker.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.launch
 
 
 class EmojiPickerPopup(context: Context) : Dialog(context) {

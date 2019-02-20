@@ -18,10 +18,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.android.synthetic.main.emoji_category_layout.view.*
 import kotlinx.android.synthetic.main.emoji_image_row_item.view.*
 import kotlinx.android.synthetic.main.emoji_row_item.view.*
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 internal class EmojiPagerAdapter(private val listener: EmojiKeyboardListener) : PagerAdapter() {

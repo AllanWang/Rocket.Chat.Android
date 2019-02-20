@@ -10,8 +10,8 @@ import chat.rocket.android.server.domain.SaveConnectingServerInteractor
 import chat.rocket.android.server.infraestructure.RocketChatClientFactory
 import chat.rocket.android.server.presentation.CheckServerPresenter
 import chat.rocket.android.util.extension.launchUI
-import kotlinx.coroutines.experimental.DefaultDispatcher
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.DefaultDispatcher
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class OnBoardingPresenter @Inject constructor(

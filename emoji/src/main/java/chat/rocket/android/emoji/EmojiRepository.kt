@@ -10,9 +10,9 @@ import chat.rocket.android.emoji.internal.db.EmojiDatabase
 import chat.rocket.android.emoji.internal.isCustom
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.CommonPool
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
