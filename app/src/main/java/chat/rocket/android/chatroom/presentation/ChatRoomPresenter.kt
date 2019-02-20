@@ -35,8 +35,7 @@ import chat.rocket.android.server.domain.uploadMimeTypeFilter
 import chat.rocket.android.server.domain.useRealName
 import chat.rocket.android.server.infraestructure.ConnectionManagerFactory
 import chat.rocket.android.server.infraestructure.state
-import chat.rocket.android.util.extension.getByteArray
-import chat.rocket.android.util.extension.launchUI
+import chat.rocket.android.util.extension.*
 import chat.rocket.android.util.extensions.avatarUrl
 import chat.rocket.android.util.retryDB
 import chat.rocket.android.util.retryIO
@@ -76,12 +75,8 @@ import chat.rocket.core.model.ChatRoomRole
 import chat.rocket.core.model.Command
 import chat.rocket.core.model.Message
 import chat.rocket.core.model.Room
-import kotlinx.coroutines.CommonPool
-import kotlinx.coroutines.DefaultDispatcher
-import kotlinx.coroutines.android.UI
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.threeten.bp.Instant
 import timber.log.Timber
 import java.util.*
@@ -580,7 +575,7 @@ class ChatRoomPresenter @Inject constructor(
     }
 
     private fun loadMissingMessages() {
-        launch(parent = strategy.jobs) {
+        launch(strategy.jobs) {
             chatRoomId?.let { chatRoomId ->
                 val roomType = roomTypeOf(chatRoomType)
                 val lastSyncDate = messagesRepository.getLastSyncDate(chatRoomId)
