@@ -9,8 +9,8 @@ ext {
             dokka                 : '0.9.16',
 
             // For app
-            kotlin                : '1.2.71',
-            coroutine             : '0.25.0',
+            kotlin                : '1.3.21',
+            coroutine             : '1.1.1',
 
             appCompat             : '1.0.0',
             recyclerview          : '1.0.0',
