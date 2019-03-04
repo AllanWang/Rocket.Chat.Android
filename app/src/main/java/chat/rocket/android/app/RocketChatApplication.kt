@@ -85,7 +85,6 @@ class RocketChatApplication : Application(), HasActivityInjector, HasServiceInje
 
     override fun onCreate() {
         super.onCreate()
-
         DaggerAppComponent.builder()
             .application(this)
             .build()
@@ -99,9 +98,9 @@ class RocketChatApplication : Application(), HasActivityInjector, HasServiceInje
 
         AndroidThreeTen.init(this)
 
+        setupTimber()
         setupFabric(this)
         setupFresco()
-        setupTimber()
 
         if (localRepository.needOldMessagesCleanUp()) {
             messagesPrefs.edit {

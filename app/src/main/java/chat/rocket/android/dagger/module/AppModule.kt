@@ -114,11 +114,15 @@ class AppModule {
     @Singleton
     fun provideBasicAuthenticatorInterceptor(
         getBasicAuthInteractor: GetBasicAuthInteractor,
-        saveBasicAuthInteractor: SaveBasicAuthInteractor
+        saveBasicAuthInteractor: SaveBasicAuthInteractor,
+        getCurrentServer: GetCurrentServerInteractor,
+        getCurrentToken : TokenRepository
     ): BasicAuthenticatorInterceptor {
         return BasicAuthenticatorInterceptor(
             getBasicAuthInteractor,
-            saveBasicAuthInteractor
+            saveBasicAuthInteractor,
+            getCurrentServer,
+            getCurrentToken
         )
     }
 

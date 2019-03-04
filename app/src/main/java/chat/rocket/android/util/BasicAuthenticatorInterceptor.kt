@@ -1,14 +1,18 @@
 package chat.rocket.android.util
 
+import chat.rocket.android.log
+import chat.rocket.android.server.domain.GetBasicAuthInteractor
+import chat.rocket.android.server.domain.GetCurrentServerInteractor
+import chat.rocket.android.server.domain.SaveBasicAuthInteractor
+import chat.rocket.android.server.domain.TokenRepository
+import chat.rocket.android.server.domain.model.BasicAuth
+import chat.rocket.common.model.Token
+import okhttp3.Credentials
+import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
-import okhttp3.Credentials
 import java.io.IOException
-import chat.rocket.android.server.domain.model.BasicAuth
-import chat.rocket.android.server.domain.GetBasicAuthInteractor
-import chat.rocket.android.server.domain.SaveBasicAuthInteractor
-
 import javax.inject.Inject
 
 /**
@@ -17,16 +21,27 @@ import javax.inject.Inject
  * [application interceptor][OkHttpClient.interceptors]
  * or as a [ ][OkHttpClient.networkInterceptors].
  */
-class BasicAuthenticatorInterceptor @Inject constructor (
+class BasicAuthenticatorInterceptor @Inject constructor(
     private val getBasicAuthInteractor: GetBasicAuthInteractor,
-    private val saveBasicAuthInteractor: SaveBasicAuthInteractor
-): Interceptor {
+    private val saveBasicAuthInteractor: SaveBasicAuthInteractor,
+    getCurrentServer: GetCurrentServerInteractor,
+    getCurrentToken: TokenRepository
+) : Interceptor {
     private val credentials = HashMap<String, String>()
+    private var tokens: Pair<String, Token>? = null
 
     init {
         val basicAuths = getBasicAuthInteractor.getAll()
-        for (basicAuth in basicAuths){
+        for (basicAuth in basicAuths) {
             credentials[basicAuth.host] = basicAuth.credentials
+        }
+        getCurrentServer.get()?.let { server ->
+            HttpUrl.parse(server)?.host()?.let { host ->
+                getCurrentToken.get(server)?.let { token ->
+                    log { "Server $host token $token" }
+                    tokens = host to token
+                }
+            }
         }
     }
 
@@ -56,6 +71,16 @@ class BasicAuthenticatorInterceptor @Inject constructor (
 
         credentials[host]?.let {
             request = request.newBuilder().header("Authorization", it).build()
+        }
+
+        tokens?.let { t ->
+            if (host == t.first) {
+                val newUrl = url.newBuilder()
+                    .addQueryParameter("rc_uid", t.second.userId)
+                    .addQueryParameter("rc_token", t.second.authToken)
+                    .build()
+                request = request.newBuilder().url(newUrl).build()
+            }
         }
 
         return chain.proceed(request)

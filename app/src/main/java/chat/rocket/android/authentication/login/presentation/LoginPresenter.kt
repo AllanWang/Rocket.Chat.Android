@@ -128,7 +128,6 @@ class LoginPresenter @Inject constructor(
                 view.hideLoading()
             }
         }
-
     }
 
     fun forgotPassword() = navigator.toForgotPassword()

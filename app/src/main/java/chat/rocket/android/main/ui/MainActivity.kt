@@ -2,10 +2,10 @@ package chat.rocket.android.main.ui
 
 import DrawableHelper
 import android.app.Activity
-import androidx.appcompat.app.AlertDialog
 import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.annotation.IdRes
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -119,7 +119,6 @@ class MainActivity : AppCompatActivity(), MainView, HasActivityInjector,
     override fun supportFragmentInjector(): AndroidInjector<Fragment> =
         fragmentDispatchingAndroidInjector
 
-
     override fun showUserStatus(userStatus: UserStatus) {
         headerLayout.apply {
             image_user_status.setImageDrawable(
@@ -183,7 +182,6 @@ class MainActivity : AppCompatActivity(), MainView, HasActivityInjector,
         }
     }
 
-
     override fun closeServerSelection() {
         view_navigation.getHeaderView(0).account_container.performClick()
     }
@@ -228,7 +226,7 @@ class MainActivity : AppCompatActivity(), MainView, HasActivityInjector,
     }
 
     fun setupNavigationView() {
-        with (view_navigation.menu) {
+        with(view_navigation.menu) {
             clear()
             setupMenu(this)
         }
@@ -247,7 +245,7 @@ class MainActivity : AppCompatActivity(), MainView, HasActivityInjector,
     fun showLogoutDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.title_are_you_sure)
-            .setPositiveButton(R.string.action_logout) { _, _ -> presenter.logout()}
+            .setPositiveButton(R.string.action_logout) { _, _ -> presenter.logout() }
             .setNegativeButton(android.R.string.no) { dialog, _ -> dialog.cancel() }
             .create()
             .show()
@@ -266,7 +264,8 @@ class MainActivity : AppCompatActivity(), MainView, HasActivityInjector,
     fun setCheckedNavDrawerItem(@IdRes item: Int) = view_navigation.setCheckedItem(item)
 
     override fun showProgress() {
-        progressDialog = ProgressDialog.show(this, getString(R.string.app_name), getString(R.string.msg_log_out), true, false)
+        progressDialog =
+            ProgressDialog.show(this, getString(R.string.app_name), getString(R.string.msg_log_out), true, false)
     }
 
     override fun hideProgress() {
